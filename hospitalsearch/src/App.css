@@ -1,38 +1,113 @@
-.App {
+html, body {
+  margin: 0;
+  height: 100%;
+  overflow-x: hidden;
+}
+.topmenu{
+  justify-content: space-between;
+  display: flex;
+}
+
+h1{
+  width: 25%;
+  margin-top: 20px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.searchBar{
+  width: 50%;
+  margin-top: 20px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.menuWrapper{
+  width: 25%;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.menu{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-evenly;
+  list-style-type: none;
+  font-size: 20px;
+  justify-content: space-evenly;
+}
+.menu > li{
+  padding: 10px;
+  padding: 10px;
+  background-color: #ED8074;
+  border-radius: 30px;
   color: white;
+  height: 28px;
+  text-align: center;
 }
-
-.App-link {
-  color: #61dafb;
+.root {
+  width: 75%;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+#root{
+  height: 100%;
+}
+.bullet {
+  display: inline-block;
+  margin: 0 2px;
+  transform: 'scale(0.8)'
+}
+.title {
+  font-size: 14px,
+}
+.pos{
+  margin-bottom: 12px,
+}
+.logo{
+  width: 245px;
+    height: 70px;
+    margin: 10px;
+}
+.hospitalWrapper{
+  width: 100%;
+  height: fit-content;
+  padding: 30px 160px;
+  background-color: #F1F1F1;
+}
+.homepagewrapper{
+  height: 100%;
+}
+.homepagewrapper > img{
+  height: 88%;
+  width: 100%;
+}
+.bedtypes{
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  
+}
+.googlemapnavigation{
+  width: 40px; 
+  height:40px;
+}
+.hospital-card{
+  display: flex;
+  justify-content: space-between;
+}
+.bedCount{
+  text-align:center;
+}
+.hospital-name{
+  font-size: 32px;
+  font-weight: 450;
+  font-variant-caps: all-petite-caps;
+}
+.hospital-cardwrapper{
+  margin: 10px;
+  border-left: 4px solid lightgray !important;
+}
+.bedtypes >li{
+  padding: 5px 20px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+}
+.MuiCardActions-root {
+  display: flex;
+  padding: 8px;
+  justify-content: flex-end;
+  margin-right: 20px;
+}
+.learnMore{
+  font-size: 14px !important;
 }

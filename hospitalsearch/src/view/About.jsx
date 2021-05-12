@@ -1,7 +1,7 @@
 import React,{ Component } from "react";
 import Hospitals from "./Hospitals";
 
-class  HomePage extends Component {
+class  About extends Component {
 
   constructor(props){
       super(props);
@@ -31,15 +31,13 @@ class  HomePage extends Component {
   render(){
   return (
     <>
-      {this.state.hospitalFlag?
-      <Hospitals data={this.state.data}/>
-      : <div className="homepagewrapper">
-      <img src="https://user-images.githubusercontent.com/36616708/114968353-c593f800-9e3b-11eb-89e5-0a0dcd3a18a6.jpeg" alt="Home Page"/>
-    </div>}
+     <div>
+         <img src="https://user-images.githubusercontent.com/36616708/117752597-ae4aef00-b1dc-11eb-8111-bde877a8d217.PNG" alt="About Page"/>
+     </div>
      
     </>
   );
   }
 }
 
-export default HomePage;
+export default About;

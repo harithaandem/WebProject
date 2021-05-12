@@ -1,5 +1,6 @@
 import React,{ Component } from "react";
 import SearchBar from "material-ui-search-bar";
+import history from "./history";
 class  Searchbar extends Component {
 
   constructor(props){
@@ -17,12 +18,14 @@ class  Searchbar extends Component {
       });
   }
   doSomethingWith = (value) => {
+    history.push('/hospitals');
     this.props.onSearchWithHospitalName(value);
   }
   render(){
   return (
     <SearchBar
     className="searchBar"
+    placeholder=" Search For Hospitals"
     value={this.state.value}
     onChange={(newValue) => this.setState({ value: newValue })}
     onRequestSearch={() => this.doSomethingWith(this.state.value)}

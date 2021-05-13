@@ -11,7 +11,7 @@ import SideNav, { Toggle, Nav, NavItem, NavIcon, NavText } from '@trendmicro/rea
 import '@trendmicro/react-sidenav/dist/react-sidenav.css';
 import { faAddressBook, faHome, faInfoCircle, faSyringe } from "@fortawesome/free-solid-svg-icons";
 import { faBed } from "@fortawesome/free-solid-svg-icons";
-
+import About from "./view/About";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import HospitalFilter from "./view/HospitalFilter";
 import Login from "./view/Login";
@@ -111,14 +111,6 @@ class App extends Component {
                             About
                         </NavText>
                     </NavItem>
-                    <NavItem eventKey="contactus">
-                        <NavIcon>
-                        <FontAwesomeIcon icon={faAddressBook} />
-                        </NavIcon>
-                        <NavText>
-                            Contact Us
-                        </NavText>
-                    </NavItem>
                 </SideNav.Nav>
             </SideNav>
             <main>
@@ -126,6 +118,7 @@ class App extends Component {
                 <Route path="/home" exact component={props => <HomePage data={this.state.hospitalData} hospitalFlag={this.state.hospitalFlag}/>} />
                 <Route path="/hospitals" component={() => <Hospitals  data={this.state.hospitalData}  />} />
                 <Route path="/login" component={() => <Login/>}/>
+                <Route path="/about" component={() => <About/>} />
                 <Route path="/vaccinebookings" component={() => <VaccineBookings/>} />
                 <Route path="/filterhospitals" component={() => <HospitalFilter  data={this.state.hospitalData}  />} />
             </main>

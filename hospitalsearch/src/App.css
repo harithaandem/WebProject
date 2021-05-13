@@ -24,6 +24,7 @@ label{
 main{
   height: fit-content;
   background-color: #F1F1F1;
+  min-height: -webkit-fill-available;
 }
 
 h1{
@@ -259,4 +260,11 @@ svg{
   background-color:#ED8074;
   color: white;
   border: white;
+}
+.about{
+  padding: 110px 160px;
+}
+.about>img{
+  height: 800px;
+  width: 1010px;
 }

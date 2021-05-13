@@ -31,8 +31,8 @@ class  About extends Component {
   render(){
   return (
     <>
-     <div>
-         <img src="https://user-images.githubusercontent.com/36616708/117752597-ae4aef00-b1dc-11eb-8111-bde877a8d217.PNG" alt="About Page"/>
+     <div className="about">
+         <img src="https://user-images.githubusercontent.com/36616708/118166015-98127e00-b3ea-11eb-8961-67ecb2ddb527.jpg" alt="About Page"/>
      </div>
      
     </>

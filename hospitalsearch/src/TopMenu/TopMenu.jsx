@@ -14,6 +14,7 @@ class TopMenu extends Component {
     }
     responseGoogle = (response) => {
         console.log(response.profileObj);
+        this.props.loggedin(response.profileObj);
         if (response.profileObj) {
             this.setState({
                 loginData: response.profileObj,

@@ -247,6 +247,10 @@ svg{
   min-height: 40px;
 }
 
+.cursornotallowed{
+  cursor: not-allowed;
+}
+
 .slotBooked{
   cursor: not-allowed;
   background-color: lightgrey;

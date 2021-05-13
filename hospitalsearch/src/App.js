@@ -25,7 +25,9 @@ class App extends Component {
     this.state = {
       svg: false,
       hospitalData: [],
-      hospitalFlag: false
+      hospitalFlag: false,
+      userProfile :[],
+      loggedin: false
     }
   }
   onSearchWithHospitalName = (value) =>{
@@ -56,6 +58,13 @@ class App extends Component {
     window.addEventListener('scroll', this.listenScrollEvent)
   }
 
+  loggedin = (userProfile) => {
+
+    this.setState({
+      userProfile :userProfile,
+      loggedin: true
+    })
+  }
   render() {
     return (
 
@@ -63,7 +72,7 @@ class App extends Component {
         <div className="topmenu">
           <HospitalSearchLogo />
           <Searchbar onSearchWithHospitalName = {this.onSearchWithHospitalName}/>
-          <TopMenu />
+          <TopMenu loggedin = {this.loggedin} />
         </div>
        
           <Route render={({ location, history }) => (
@@ -71,8 +80,11 @@ class App extends Component {
             <SideNav
                 onSelect={(selected) => {
                     const to = '/' + selected;
-                    if (location.pathname !== to) {
+                    if (location.pathname !== to && this.state.loggedin) {
                         history.push(to);
+                    }
+                    else{
+                      alert("Please Login")
                     }
                 }}
             >
@@ -81,34 +93,50 @@ class App extends Component {
                     <NavItem eventKey="home">
                         <NavIcon>
                             {/* <i className="fa fa-fw fa-home" style={{ fontSize: '1.75em' }} /> */}
+                            <div className={this.state.loggedin ? "" : "cursornotallowed"}>
                             <FontAwesomeIcon icon={faHome} />
+                            </div>
                         </NavIcon>
                         <NavText>
+                        <div className={this.state.loggedin ? "" : "cursornotallowed"}>
                             Home
+                            </div>
                         </NavText>
                     </NavItem>
                     <NavItem eventKey="filterhospitals">
                         <NavIcon>
+                        <div className={this.state.loggedin ? "" : "cursornotallowed"}>
                         <FontAwesomeIcon icon={faBed} />
+                        </div>
                         </NavIcon>
                         <NavText>
+                        <div className={this.state.loggedin ? "" : "cursornotallowed"}>
                             Hospitals
+                            </div>
                         </NavText>
                     </NavItem>
                     <NavItem eventKey="vaccinebookings">
                         <NavIcon>
+                        <div className={this.state.loggedin ? "" : "cursornotallowed"}>
                         <FontAwesomeIcon icon={faSyringe} />
+                        </div>
                         </NavIcon>
                         <NavText>
+                        <div className={this.state.loggedin ? "" : "cursornotallowed"}>
                             Covid Vaccince 
+                            </div>
                         </NavText>
                     </NavItem>
                     <NavItem eventKey="about">
                         <NavIcon>
+                        <div className={this.state.loggedin ? "" : "cursornotallowed"}>
                         <FontAwesomeIcon icon={faInfoCircle} />
+                        </div>
                         </NavIcon>
                         <NavText>
+                        <div className={this.state.loggedin ? "" : "cursornotallowed"}>
                             About
+                            </div>
                         </NavText>
                     </NavItem>
                 </SideNav.Nav>
